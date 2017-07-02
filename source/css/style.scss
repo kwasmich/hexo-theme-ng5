@@ -61,12 +61,12 @@ body {
 
 html {
     background-blend-mode: hard-light;
-    background: url(detail.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
-    background-size: 256px, 8px 1280px;
+    background: url(detail.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    background-size: 256px, 8px 640px;
     background-repeat: repeat, repeat-x;
     background-color: #000;
-    margin-top: -640px;
-    padding-top: 640px;
+    //margin-top: -640px;
+    //padding-top: 640px;
 }
 
 
@@ -89,15 +89,15 @@ figure {
 }
 
 
-footer {
+body > footer {
     padding: 16px;
-    position: relative;
-    position: -webkit-sticky;
-    position:    -moz-sticky;
-    position:     -ms-sticky;
-    position:      -o-sticky;
-    position:         sticky;
-    bottom: 0px;
+    // position: relative;
+    // position: -webkit-sticky;
+    // position:    -moz-sticky;
+    // position:     -ms-sticky;
+    // position:      -o-sticky;
+    // position:         sticky;
+    // bottom: 0px;
     text-align: center;
 }
 
@@ -107,7 +107,8 @@ img {
 }
 
 
-#mainmenu {
+#mainmenu,
+#submenu {
     border-top-left-radius: 10px 20px;
     border-bottom-left-radius: 10px 20px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(#F00, #C00);
@@ -115,19 +116,23 @@ img {
     background-size: 4px 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     color: #000;
-    font-size: 1.4em;
-    line-height: 20px;
-    padding: 10px 15px;
-    margin: 0 0 10px 64px;
-
+    font-size: 1.5em;
+    line-height: 40px;
+    margin: 0 0 0 64px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    
     & > ul {
         list-style: none;
         margin: 0;
         padding: 0;
+        white-space: nowrap;
 
         & > li {
-            display: inline;
-            margin-right: 24px;
+            display: inline-block;
+            margin-right: 8px;
+            padding: 0 8px;
 
             &:not(:last-of-type)::after {
                 //content: "|";
@@ -155,6 +160,25 @@ img {
 }
 
 
+#submenu {
+    border-top-left-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
+    border-bottom-left-radius: 10px 20px;
+    border-bottom-right-radius: 10px 20px;
+    background: linear-gradient(#FC0, #C90);
+    background-color: #FC0;
+    display: inline-block;
+    font-size: 1em;
+    height: 40px;
+    line-height: 20px;
+    margin: -20px 0 10px 128px;
+    padding: 0 15px;
+    position: initial;
+
+    & > ul {
+        padding: 20px 0 0 0;
+    }
+}
 
 
 

@@ -16,12 +16,30 @@
     <#- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) #>
     <#- partial('_partial/after-footer') #>
   </div-->
+  <%= url_for(page.path) %> -
+  <%= url %> -
+  <%= path %>
     <header>
         <nav id="mainmenu">
             <ul>
-                <% for (var i in theme.menu){ %>
+                <% for (var link in site.data.menu) { %>
+                    <% var match = url_for(page.path).match(new RegExp(url_for(site.data.menu[link]))); %>
+                    <% var isSelected = !!match && false; %>
+                    <% if (isSelected) { %>
+                        <li class="selected">
+                    <% } else { %>
+                        <li>
+                    <% } %>
+                        <a href="<%- url_for(site.data.menu[link]) %>"><%= link %></a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+        <nav id="submenu">
+            <ul>
+                <% for (var link in site.data.menu) { %>
                     <li>
-                        <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+                        <a href="<%- url_for(site.data.menu[link]) %>"><%= link %></a>
                     </li>
                 <% } %>
             </ul>
