@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <%- partial('_partial/head') %>
+    <body>
+        <!--div id="container">
+        <div id="wrap">
+            <#- partial('_partial/header', null, {cache: !config.relative_link}) #>
+            <div class="outer">
+                <section id="main"><#- body #></section>
+        <# if (theme.sidebar && theme.sidebar !== 'bottom'){ #>
+          <#- partial('_partial/sidebar', null, {cache: !config.relative_link}) #>
+        <# } #>
+      </div>
+      <#- partial('_partial/footer', null, {cache: !config.relative_link}) #>
+    </div>
+    <#- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) #>
+    <#- partial('_partial/after-footer') #>
+  </div-->
+    <header>
+        <nav id="mainmenu">
+            <ul>
+                <% for (var i in theme.menu){ %>
+                    <li>
+                        <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <!--nav id="breadcrumb">
+        <ul>
+            <li>
+                <a href="/">Kwasi</a>
+            </li>
+            <li>
+                <a href="/path/">Path</a>
+            </li>
+            <li>
+                <a href="/path/to/">To</a>
+            </li>
+            <li>
+                Article
+            </li>
+        </ul>
+    </nav-->
+
+    <main><%- body %></main>
+    <footer>Copyright © 2017 Michael Kwaśnicki. All rights reserved.</footer>
+
+    <%- partial('_partial/after-footer') %>
+  </body>
+</html>

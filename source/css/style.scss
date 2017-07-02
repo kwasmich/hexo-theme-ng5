@@ -1,0 +1,256 @@
+/*
+@media all and (min-width:1024px) {
+    html {
+        zoom: 1.25;
+    }
+}
+
+@media all and (min-width:1280px) {
+    html {
+        zoom: 1.5;
+    }
+}
+
+@media all and (min-width:1600px) {
+    html {
+        zoom: 1.5;
+    }
+}
+
+@media all and (min-width:1920px) {
+    html {
+        zoom: 2;
+    }
+}
+*/
+
+/*html {*/
+/*    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255,255,255, 0));*/
+/*    background-size: 8px 100vh;*/
+/*    background-repeat: repeat-x;*/
+/*    background-color: #000;*/
+/*}*/
+
+
+/*html {*/
+/*    background: url(detail.jpg), url(detail.jpg);*/
+/*    background-blend-mode: multiply;*/
+/*    background-size: 2px 100vh, 256px 256px;*/
+/*    background-repeat: repeat-x, repeat;*/
+/*}*/
+
+/*html {*/
+/*    background-image: url(detail.jpg);*/
+/*    background-color: #808080;*/
+/*    background-blend-mode: multiply;*/
+/*    background-size: 256px 256px;*/
+/*    background-repeat: repeat;*/
+/*}*/
+
+
+/* theme reverts */
+body {
+    background-color: initial;
+}
+
+
+
+
+
+
+
+html {
+    background-blend-mode: hard-light;
+    background: url(detail.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background-size: 256px, 8px 1280px;
+    background-repeat: repeat, repeat-x;
+    background-color: #000;
+    margin-top: -640px;
+    padding-top: 640px;
+}
+
+
+body {
+    color: #CCC;
+    font-family: sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+main {
+    min-height: 640px;
+    padding: 20px;
+}
+
+
+figure {
+    text-align: center;
+}
+
+
+footer {
+    padding: 16px;
+    position: relative;
+    position: -webkit-sticky;
+    position:    -moz-sticky;
+    position:     -ms-sticky;
+    position:      -o-sticky;
+    position:         sticky;
+    bottom: 0px;
+    text-align: center;
+}
+
+
+img {
+    background-color: #333;
+}
+
+
+#mainmenu {
+    border-top-left-radius: 10px 20px;
+    border-bottom-left-radius: 10px 20px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(#F00, #C00);
+    background-color: #F00;
+    background-size: 4px 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000;
+    font-size: 1.4em;
+    line-height: 20px;
+    padding: 10px 15px;
+    margin: 0 0 10px 64px;
+
+    & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            display: inline;
+            margin-right: 24px;
+
+            &:not(:last-of-type)::after {
+                //content: "|";
+            }
+
+            &.selected {
+                background: linear-gradient(#C00, #F00);
+                background-color: #C00;
+                background-size: 4px 100%;
+            }
+        }
+    }
+
+    a {
+        color: #000;
+    	font-weight: bold;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+    	    background: initial;
+    	    color: #fff;
+        }
+    }
+}
+
+
+
+
+
+#breadcrumb {
+    text-align: right;
+}
+
+
+#breadcrumb > ul {
+    padding-right: 40px;
+}
+
+
+#breadcrumb > ul > li {
+    display: inline;
+}
+
+
+#breadcrumb > ul > li:not(:last-of-type)::after {
+    content: "⟩";
+}
+
+
+
+#tags > li,
+.article-tag-list > li {
+    background-color: #f00;
+    border-radius: 5px;
+    color: #000;
+    display: inline;
+    margin-right: 8px;
+    padding: 0 5px;
+
+    a {
+        color: initial;
+    	font-weight: normal;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+    	    background: initial;
+    	    color: #fff;
+        }
+    }
+}
+
+
+
+
+body > *:not(header):not(footer) {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+body > header {
+    padding-top: 32px;
+    position: relative;
+    position: -webkit-sticky;
+    position:    -moz-sticky;
+    position:     -ms-sticky;
+    position:      -o-sticky;
+    position:         sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+
+a {
+    &:link {
+	    color: #eee;
+	    font-weight: bold;
+    }
+
+    &:visited {
+	    color: #777;
+    }
+
+    &:hover {
+	    background: #aaa;
+	    color: #000;
+    }
+
+    &:active {
+	    background: #aaa;
+	    color: #eee;
+    }
+
+    &[href^="http"]:not([href*="kwasi-ich.de"]) {
+    	background-image: url( "externalLink.png" );
+	    background-repeat: no-repeat;
+	    background-position: 100% 60%;
+	    padding: 0 1.5em 0 0;
+    }
+
+    & > img {
+	    vertical-align: text-bottom;
+    }
+}

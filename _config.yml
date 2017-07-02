@@ -1,0 +1,46 @@
+# Header
+menu:
+  Kwasi: /
+  Blog: /blog
+  Photos: /photos
+  Software: /software
+  Archives: /archives
+#rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+- category
+- tagcloud
+- archive
+
+# widget behavior
+archive_type: 'monthly'
+show_count: true
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+favicon: /favicon.png
+twitter: MRKwasnicki
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
