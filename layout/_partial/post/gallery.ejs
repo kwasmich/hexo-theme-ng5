@@ -1,7 +1,8 @@
-<% if (post.photos && post.photos.length){ %>
+<% var photos = (Array.isArray(photos)) ? post.photos : [post.photos]; %>
+<% if (photos && photos.length){ %>
 <div class="article-gallery">
   <div class="article-gallery-photos">
-    <% post.photos.forEach(function(photo, i){ %>
+    <% photos.forEach(function(photo, i){ %>
       <a class="article-gallery-img fancybox" href="<%- url_for(photo) %>" rel="gallery_<%= post._id %>">
         <img src="<%- url_for(photo) %>" itemprop="image">
       </a>
