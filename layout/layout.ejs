@@ -16,16 +16,22 @@
     <#- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) #>
     <#- partial('_partial/after-footer') #>
   </div-->
-  <%= url_for(page.path) %> -
-  <%= url %> -
-  <%= path %>
+    <!--%= url_for(page.path) %-->
+    <!--%= url %-->
+    <!--%= path %-->
     <header>
+        <% var activeLink = ""; %>
+        <% for (var link in site.data.menu) { %>
+            <% var match = url_for(page.path).match(new RegExp(url_for(site.data.menu[link]))); %>
+            <% var isSelected = !!match; %>
+            <% if (isSelected) { %>
+                <% activeLink = link; %>
+            <% } %>
+        <% } %>
         <nav id="mainmenu">
             <ul>
                 <% for (var link in site.data.menu) { %>
-                    <% var match = url_for(page.path).match(new RegExp(url_for(site.data.menu[link]))); %>
-                    <% var isSelected = !!match && false; %>
-                    <% if (isSelected) { %>
+                    <% if (link === activeLink) { %>
                         <li class="selected">
                     <% } else { %>
                         <li>
@@ -35,15 +41,17 @@
                 <% } %>
             </ul>
         </nav>
-        <nav id="submenu">
-            <ul>
-                <% for (var link in site.data.menu) { %>
-                    <li>
-                        <a href="<%- url_for(site.data.menu[link]) %>"><%= link %></a>
-                    </li>
-                <% } %>
-            </ul>
-        </nav>
+        <% if (site.data.submenu[activeLink]) { %>
+            <nav id="submenu">
+                <ul>
+                    <% for (var link in site.data.submenu[activeLink]) { %>
+                        <li>
+                            <a href="<%- site.data.submenu[activeLink][link] %>"><%= link %></a>
+                        </li>
+                    <% } %>
+                </ul>
+            </nav>
+        <% } %>
     </header>
     <!--nav id="breadcrumb">
         <ul>
