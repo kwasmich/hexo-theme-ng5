@@ -155,14 +155,14 @@ img {
 #submenu {
     border-top-left-radius: 10px 20px;
     border-bottom-left-radius: 10px 20px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(#F00, #C00);
-    background-color: #F00;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.075)), linear-gradient(#F00, #C00);
+    background-color: #D80000;
     background-size: 4px 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     color: #000;
     font-size: 1.5em;
     line-height: 40px;
-    margin: 0 0 0 64px;
+    margin: 0 0 0 12.5%;
     padding: 0 15px;
     position: relative;
     z-index: 2;
@@ -211,11 +211,12 @@ img {
     border-bottom-right-radius: 10px 20px;
     background: linear-gradient(#FC0, #C90);
     background-color: #FC0;
+    background-size: 100% 50%;
     display: inline-block;
-    font-size: 1em;
+    font-size: 0.9em;
     height: 40px;
     line-height: 20px;
-    margin: -20px 0 10px 128px;
+    margin: -20px 0 10px calc(64px + 12.5%);
     padding: 0 15px;
     position: initial;
 
@@ -308,6 +309,11 @@ a {
 
 b, strong {
     color: #fff;
+}
+
+code {
+    padding: 0.25em;
+    background: #222;
 }
 
 dt {

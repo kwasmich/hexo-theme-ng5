@@ -1,28 +1,26 @@
 <article>
     <header>
-        <% if (page.photos && page.photos.length){ %>
+        <% var photos = (Array.isArray(page.photos)) ? page.photos : [page.photos]; %>
+        <% if (page.photos && photos && photos.length) { %>
             <figure>
-                <% page.photos.forEach(function(photo, i){ %>
-                    <img src="<%- url_for(photo) %>" itemprop="image">
+                <% photos.forEach(function(photo, i) { %>
+                    <img src="<%= photo %>">
                 <% }) %>
             </figure>
         <% } %>
-
-        <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date) %></time>
-
-        <% if (page.author) { %>
-            by <%= page.author %>
-        <% } %>
-
+        <h1><%= page.title %></h1>
+        <small>
+            <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, null) %></time>
+            <% if (page.author) { %>
+                <br />
+                by <span><%= page.author %></span>
+            <% } %>
+        </small>
         <% if (page.tags && page.tags.length) { %>
             <%- list_tags(page.tags, { show_count: false, class: 'article-tag' }) %>
         <% } %>
-        
-        <h1><%= page.title %></h1>
     </header>
-
-    <%- page.content %>    
+    <section>
+        <%- page.content %>
+    </section>
 </article>
-<!--Post
-<#- partial('_partial/article', {post: page, index: false}) #>
--->

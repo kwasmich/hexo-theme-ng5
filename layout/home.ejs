@@ -1,1 +1,24 @@
-<%- page.content %>
+<article>
+    <header>
+        <h1><%= theme.title %></h1>
+        <small>
+        <%= theme.subtitle %>
+        </small>
+    </header>
+    <section>
+        <%- page.content %>
+
+        <ul>
+            <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+                <li>
+                    <big><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></big>
+                    <small>
+                        <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, null) %></time>
+                    </small>
+                    <%- post.excerpt %>
+                    <a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+</article>
