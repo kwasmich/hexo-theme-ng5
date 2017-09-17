@@ -146,7 +146,7 @@ figure {
 }
 
 
-img {
+img:not([src$=".png"]) {
     background-color: #333;
 }
 
@@ -331,8 +331,15 @@ h2, h3, h4, h5, h6 {
     margin-top: 1.66em;
 }
 
+ul.articlelist {
+    li {
+        margin-bottom: 32px;
 
-
+        p {
+            margin: 0.5em 0;
+        }
+    }
+}
 
 
 

@@ -1,0 +1,37 @@
+<!-- <dl>
+    <dt>2017</dt>
+    <dd>asdfasdf</dd>
+</dl> -->
+<% var last = undefined; %>
+<% page.posts.sort('date', -1).each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+        <% if (last) { %>
+            </dl>
+        <% } %>
+        <% last = year; %>
+        <dl>
+            <dt>
+                <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year">
+                    <%= year %>
+                </a>
+            </dt>
+            <dd>
+    <% } %>
+    <dl>
+        <dt>
+            <small>
+                <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, null) %></time>
+            </small>
+        </dt>
+        <dd>
+            <big>
+                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            </big>
+            <%- post.excerpt %>
+        </dd>
+    </dl>
+<% }) %>
+<% if (page.posts.length){ %>
+    </dl>
+<% } %>

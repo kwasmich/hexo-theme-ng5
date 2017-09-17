@@ -1,1 +1,14 @@
-<%- partial('_partial/archive', {pagination: config.tag, index: true}) %>
+<article>
+        <header>
+            <%= console.log(site.tags.toArray()) %>
+            <!--% site.tags.each(function(tag){ %-->
+                <!--%= tag.name %-->
+              <!--% }) %-->
+            <%- list_tags(site.tags, { orderby: 'name', order: 1, show_count: false, class: 'article-tag' }) %>
+            <h1>Posts with tag: <q><%= page.tag %></q></h1>
+        </header>
+        <section>
+            <%- partial('_partial/blog-list') %>
+        </section>
+    </article>
+    

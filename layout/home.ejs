@@ -8,7 +8,7 @@
     <section>
         <%- page.content %>
 
-        <ul>
+        <ul class="articlelist">
             <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
                 <li>
                     <big><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></big>
@@ -16,7 +16,7 @@
                         <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, null) %></time>
                     </small>
                     <%- post.excerpt %>
-                    <a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
+                    <!--a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a-->
                 </li>
             <% }) %>
         </ul>
