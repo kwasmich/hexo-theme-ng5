@@ -25,7 +25,7 @@ show_count: true
 google_analytics:
 gauges_analytics:
 favicon: /favicon.png
-apple-touch-icon: /apple-touch-icon.png
+apple_touch_icon: /apple-touch-icon.png
 twitter: MRKwasnicki
 google_plus:
 fb_admins:
