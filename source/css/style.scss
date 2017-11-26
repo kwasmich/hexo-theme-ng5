@@ -341,7 +341,21 @@ ul.articlelist {
     }
 }
 
+table {
+    background-color: #333;
 
+    thead > tr {
+        background-color: #555;
+    }
+
+    th {
+        padding: 5px 10px;
+    }
+
+    td {
+        padding: 0 10px;
+    }
+}
 
 
 
