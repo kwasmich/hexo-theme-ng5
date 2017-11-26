@@ -146,7 +146,7 @@ figure {
 }
 
 
-img:not([src$=".png"]) {
+img:not([src$=".png"]):not([src$=".svg"]) {
     background-color: #333;
 }
 
