@@ -51,10 +51,14 @@
 
 
 html {
-    background-blend-mode: hard-light;
-    background: url(detail.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-    background-size: 256px, 8px 640px;
-    background-repeat: repeat, repeat-x;
+    // background-blend-mode: hard-light;
+    // background-image: url(detail.jpg), linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    // background-size: 256px, 8px 640px;
+    // background-repeat: repeat, repeat-x;
+    // background-color: #000;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-size: 8px 768px;
+    background-repeat: repeat-x;
     background-color: #000;
     //margin-top: -640px;
     //padding-top: 640px;
@@ -166,7 +170,7 @@ img:not([src$=".png"]):not([src$=".svg"]) {
     padding: 0 15px;
     position: relative;
     z-index: 2;
-    
+
     & > ul {
         list-style: none;
         margin: 0;
@@ -390,7 +394,7 @@ ul.list128	{
 	list-style-type: none;
 	margin: 0 2% 0 2%;
     padding: 0;
-    
+
     li	{
         margin:	1em;
         padding:	0;
