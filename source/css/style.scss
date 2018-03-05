@@ -320,6 +320,10 @@ code {
     background: #222;
 }
 
+pre > code {
+    padding: 0;
+}
+
 dt {
     color: #fff;
     font-weight: bolder;
