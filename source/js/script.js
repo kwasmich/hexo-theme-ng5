@@ -30,8 +30,8 @@ function fuzzyBackground(w, h) {
     var html = document.body.parentNode;
     var htmlCSS = getComputedStyle(html);
     html.style.backgroundImage = "url(" + canvas.toDataURL("image/png") + "), " + htmlCSS.backgroundImage;
-    html.style.backgroundRepeat = "repeat, " + htmlCSS.backgroundRepeat;
-    html.style.backgroundSize = "256px, " + htmlCSS.backgroundSize;
+    // html.style.backgroundRepeat = "repeat, " + htmlCSS.backgroundRepeat;
+    // html.style.backgroundSize = "256px, " + htmlCSS.backgroundSize;
 }
 
 fuzzyBackground(256, 256);
