@@ -1,17 +1,3 @@
-/*
-document.onscroll = () => {
-  if (document.body.scrollTop < 0) {
-    console.log("top");
-    document.body.parentElement.style.backgroundColor = "red";
-  } else {
-    console.log("bottom");
-    document.body.parentElement.style.backgroundColor = "black";
-  }
-}
-*/
-
-
-
 function fuzzyBackground(w, h) {
     var canvas = document.createElement("CANVAS");
     canvas.width = w;
@@ -30,8 +16,6 @@ function fuzzyBackground(w, h) {
     var html = document.body.parentNode;
     var htmlCSS = getComputedStyle(html);
     html.style.backgroundImage = "url(" + canvas.toDataURL("image/png") + "), " + htmlCSS.backgroundImage;
-    // html.style.backgroundRepeat = "repeat, " + htmlCSS.backgroundRepeat;
-    // html.style.backgroundSize = "256px, " + htmlCSS.backgroundSize;
 }
 
 fuzzyBackground(256, 256);
